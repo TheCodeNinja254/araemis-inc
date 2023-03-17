@@ -28,7 +28,7 @@ const Feedback = () => {
         </Typography>
         <Grid spacing={2} container>
           {_feedback.map((r) => (
-            <Grid item xs={4} sm={4} md={3} lg={3} xl={3} id={r.id}>
+            <Grid item xs={6} sm={6} md={3} lg={3} xl={3} id={r.id}>
               <CommonCardLight elevation={0}>
                 <CardMedia
                   sx={{ height: 80 }}
@@ -36,10 +36,10 @@ const Feedback = () => {
                   title="green iguana"
                 />
                 <CardContent>
-                  <Typography variant="body1">
+                  <Typography variant="body1" sx={{ fontSize: 12 }}>
                     <strong>{r.title}</strong>
                   </Typography>
-                  <Typography sx={{ mt: 1 }} variant="body2">
+                  <Typography sx={{ mt: 1, fontSize: 10 }} variant="body2">
                     {r.text}
                   </Typography>
                 </CardContent>

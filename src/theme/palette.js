@@ -1,6 +1,6 @@
 import { red, blue, green, orange } from '@mui/material/colors';
 
-const white = '#FFFFFF';
+const white = '#EEEEEE';
 const black = '#262626';
 const appBlue = '#0B1929';
 const appLightBlue = '#051937';

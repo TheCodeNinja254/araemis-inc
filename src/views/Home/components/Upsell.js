@@ -31,7 +31,7 @@ const Upsell = () => {
                     alignContent="center">
                     {r.icon}
                   </Box>
-                  <Typography textAlign="center" sx={{ mt: 2 }} variant="h3">
+                  <Typography textAlign="center" sx={{ mt: 2 }} variant="h4">
                     <strong>{r.title}</strong>
                   </Typography>
                   <Typography textAlign="center" sx={{ mt: 1 }}>
