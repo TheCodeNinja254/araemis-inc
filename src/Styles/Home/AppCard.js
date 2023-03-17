@@ -7,7 +7,6 @@ const AppCard = styled(Card)(({ theme }) => ({
   backgroundSize: 'cover',
   height: 400,
   marginTop: theme.spacing(10)
-  // borderRadius: 20
 }));
 
 export default AppCard;
