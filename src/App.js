@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
+import { ThemeProvider } from '@mui/material';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import DefaultTheme from './theme';
+import Routes from './Routes';
+import Loader from './components/Loader';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={DefaultTheme}>
+      <Suspense fallback={<Loader />}>
+        <BrowserRouter basename={process.env.REACT_APP_BASENAME || '/'}>
+          <Routes />
+        </BrowserRouter>
+      </Suspense>
+    </ThemeProvider>
   );
 }
 
