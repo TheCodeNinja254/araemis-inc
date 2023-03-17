@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/joy';
-import { Container } from '@mui/material';
+import { Fab, useTheme } from '@mui/material';
+import { Phone } from '@mui/icons-material';
 import { Footer, Topbar } from './components';
 
 const StyledWrapper = styled('div')(({ theme }) => ({
@@ -17,17 +18,30 @@ const StyledMain = styled('main')(({ theme }) => ({
 
 const HomeLayout = (props) => {
   const { children = false } = props;
+  const theme = useTheme();
 
   return (
-    <Container>
-      <StyledWrapper>
-        <Topbar />
-        <StyledMain>
-          {children}
-          <Footer />
-        </StyledMain>
-      </StyledWrapper>
-    </Container>
+    <StyledWrapper>
+      <Topbar />
+      <StyledMain>
+        {children}
+        <Footer />
+      </StyledMain>
+      <Fab
+        variant="extended"
+        size="medium"
+        aria-label="add"
+        sx={{
+          position: 'fixed',
+          backgroundColor: theme.palette.primary.lighter,
+          bottom: () => theme.spacing(4),
+          right: () => theme.spacing(2),
+          textTransform: 'capitalize'
+        }}>
+        <Phone sx={{ mr: 1 }} />
+        Contact Us
+      </Fab>
+    </StyledWrapper>
   );
 };
 

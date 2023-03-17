@@ -3,11 +3,11 @@ import { red, blue, green, orange } from '@mui/material/colors';
 const white = '#FFFFFF';
 const black = '#262626';
 const appBlue = '#0B1929';
+const appLightBlue = '#051937';
 
 export default {
   black,
   background: {
-    // dark: '#F4F6F8',
     dark: appBlue,
     default: appBlue,
     paper: appBlue
@@ -16,7 +16,7 @@ export default {
     contrastText: white,
     dark: appBlue,
     main: appBlue,
-    light: '#0A2340',
+    light: appLightBlue,
     lighter: '#61dafb'
   },
   secondary: {

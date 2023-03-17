@@ -20,20 +20,28 @@ const Feedback = () => {
           sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(3) }}>
           <strong>What our customers say</strong>
         </Typography>
+        <Typography
+          variant="body2"
+          sx={{ marginTop: theme.spacing(1), marginBottom: theme.spacing(1) }}>
+          Hear about us from other customers we have had the please to work
+          with. The pleasure is ours
+        </Typography>
         <Grid spacing={2} container>
           {_feedback.map((r) => (
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} id={r.id}>
+            <Grid item xs={4} sm={4} md={3} lg={3} xl={3} id={r.id}>
               <CommonCardLight elevation={0}>
                 <CardMedia
-                  sx={{ height: 140 }}
+                  sx={{ height: 80 }}
                   image={r.imageSrc}
                   title="green iguana"
                 />
                 <CardContent>
-                  <Typography sx={{ mt: 2 }} variant="h4">
+                  <Typography variant="body1">
                     <strong>{r.title}</strong>
                   </Typography>
-                  <Typography sx={{ mt: 1 }}>{r.text}</Typography>
+                  <Typography sx={{ mt: 1 }} variant="body2">
+                    {r.text}
+                  </Typography>
                 </CardContent>
               </CommonCardLight>
             </Grid>

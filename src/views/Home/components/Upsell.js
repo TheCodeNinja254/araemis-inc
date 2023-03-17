@@ -12,11 +12,16 @@ const Upsell = () => {
         <Typography
           variant="h3"
           sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(3) }}>
-          <strong>Why businesses choose Us</strong>
+          <strong>Why businesses choose us</strong>
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{ marginTop: theme.spacing(1), marginBottom: theme.spacing(1) }}>
+          We focus on this so you don&apos;t have to.
         </Typography>
         <Grid spacing={2} container>
           {_upsellReasons.map((r) => (
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} id={r.id}>
+            <Grid item xs={6} sm={6} md={4} lg={4} xl={4} id={r.id}>
               <CommonCardLight elevation={0}>
                 <CardContent>
                   <Box

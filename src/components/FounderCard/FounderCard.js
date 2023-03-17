@@ -57,7 +57,7 @@ const FounderCard = ({ founderInfo }) => {
       />
       <CardMedia
         component="img"
-        height="194"
+        height="250"
         image={founderInfo?.profilePic}
         alt={founderInfo?.name}
       />
