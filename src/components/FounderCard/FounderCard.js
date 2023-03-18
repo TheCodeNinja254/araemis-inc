@@ -28,8 +28,8 @@ const ExpandMore = styled((props) => {
 
 const StyledFounderCard = styled(Card)(({ theme }) => ({
   borderRadius: 20,
-  borderColor: theme.palette.primary.light,
-  backgroundColor: theme.palette.primary.light
+  borderColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.primary.main
 }));
 
 const FounderCard = ({ founderInfo }) => {

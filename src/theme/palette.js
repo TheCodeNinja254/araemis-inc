@@ -28,7 +28,8 @@ export default {
     contrastText: appContrastText,
     dark: appLightBlue,
     main: appSecondary,
-    light: appContrastText
+    light: appContrastText,
+    lighter: appLighterBlue
   },
   text: {
     primary: white,

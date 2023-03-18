@@ -5,7 +5,7 @@ const AppCard = styled(Card)(({ theme }) => ({
   backgroundImage: "url('/images/display.jpg')",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
-  height: 400,
+  height: 300,
   marginTop: theme.spacing(0)
 }));
 

@@ -10,7 +10,7 @@ const Upsell = () => {
     <CommonCard>
       <CardContent>
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(3) }}>
           <strong>Why businesses choose us</strong>
         </Typography>
@@ -21,7 +21,7 @@ const Upsell = () => {
         </Typography>
         <Grid spacing={2} container>
           {_upsellReasons.map((r) => (
-            <Grid item xs={4} sm={4} md={4} lg={3} xl={3} id={r.id}>
+            <Grid item xs={6} sm={4} md={4} lg={3} xl={3} id={r.id}>
               <CommonCardLight elevation={0}>
                 <CardContent>
                   <Box
