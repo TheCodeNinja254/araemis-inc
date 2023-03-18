@@ -6,8 +6,12 @@ const black = '#262626';
 const appBlueDark = '#1C1B1E';
 const appBlue = '#2A282D';
 const appLightBlue = '#4F3789';
-const appLighterBlue = '#FFB4AB';
-const appSecondary = '#CFBCFF';
+const appLighterBlue = '#CFBCFF';
+
+const appSecondaryDark = '#301221';
+const appSecondary = '#7C5265';
+const appSecondaryLight = '#FFD8E6';
+const appSecondaryLighter = '#FFFFFF';
 const appContrastText = '#E6E1E6';
 
 export default {
@@ -19,17 +23,17 @@ export default {
   },
   primary: {
     contrastText: white,
-    dark: appBlue,
+    dark: appBlueDark,
     main: appBlue,
     light: appLightBlue,
     lighter: appLighterBlue
   },
   secondary: {
     contrastText: appContrastText,
-    dark: appLightBlue,
+    dark: appSecondaryDark,
     main: appSecondary,
-    light: appContrastText,
-    lighter: appLighterBlue
+    light: appSecondaryLight,
+    lighter: appSecondaryLighter
   },
   text: {
     primary: white,
@@ -63,6 +67,6 @@ export default {
     main: red[600],
     light: red[400]
   },
-  icon: white,
+  icon: appSecondaryLight,
   divider: appSecondary
 };
