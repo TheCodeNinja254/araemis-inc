@@ -31,7 +31,7 @@ const FoundersList = () => {
         justifyContent="left"
         sx={{ marginBottom: 2 }}>
         {_ourProducts.map((p) => (
-          <Grid item id={p.id} sx={3}>
+          <Grid item id={p.id} sx={2}>
             <CircularCard width="50" height="50">
               <Typography>{p.letter}</Typography>
             </CircularCard>

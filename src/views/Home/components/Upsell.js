@@ -21,7 +21,7 @@ const Upsell = () => {
         </Typography>
         <Grid spacing={2} container>
           {_upsellReasons.map((r) => (
-            <Grid item xs={6} sm={6} md={4} lg={4} xl={4} id={r.id}>
+            <Grid item xs={4} sm={4} md={4} lg={3} xl={3} id={r.id}>
               <CommonCardLight elevation={0}>
                 <CardContent>
                   <Box
@@ -31,10 +31,13 @@ const Upsell = () => {
                     alignContent="center">
                     {r.icon}
                   </Box>
-                  <Typography textAlign="center" sx={{ mt: 2 }} variant="h4">
+                  <Typography
+                    textAlign="center"
+                    sx={{ mt: 2, fontSize: 13 }}
+                    variant="h4">
                     <strong>{r.title}</strong>
                   </Typography>
-                  <Typography textAlign="center" sx={{ mt: 1 }}>
+                  <Typography textAlign="center" sx={{ mt: 1, fontSize: 11 }}>
                     {r.text}
                   </Typography>
                 </CardContent>

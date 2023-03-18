@@ -2,14 +2,19 @@ import { red, blue, green, orange } from '@mui/material/colors';
 
 const white = '#EEEEEE';
 const black = '#262626';
-const appBlue = '#0B1929';
-const appLightBlue = '#051937';
+
+const appBlueDark = '#1C1B1E';
+const appBlue = '#2A282D';
+const appLightBlue = '#4F3789';
+const appLighterBlue = '#FFB4AB';
+const appSecondary = '#CFBCFF';
+const appContrastText = '#E6E1E6';
 
 export default {
   black,
   background: {
-    dark: appBlue,
-    default: appBlue,
+    dark: appBlueDark,
+    default: appBlueDark,
     paper: appBlue
   },
   primary: {
@@ -17,18 +22,18 @@ export default {
     dark: appBlue,
     main: appBlue,
     light: appLightBlue,
-    lighter: '#61dafb'
+    lighter: appLighterBlue
   },
   secondary: {
-    contrastText: white,
-    dark: red[900],
-    main: white,
-    light: red[400]
+    contrastText: appContrastText,
+    dark: appLightBlue,
+    main: appSecondary,
+    light: appContrastText
   },
   text: {
     primary: white,
-    secondary: '#61dafb',
-    link: blue[100]
+    secondary: appSecondary,
+    link: appLighterBlue
   },
   white: {
     main: white
@@ -58,5 +63,5 @@ export default {
     light: red[400]
   },
   icon: white,
-  divider: '#61dafb'
+  divider: appSecondary
 };

@@ -5,8 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import PropTypes from 'prop-types';
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  width: '70px',
-  height: '70px',
+  width: '45px',
+  height: '45px',
   borderRadius: '50%',
   display: 'flex',
   justifyContent: 'center',
