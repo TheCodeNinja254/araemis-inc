@@ -97,7 +97,7 @@ const Topbar = (props) => {
                 }}
                 onClick={colorMode.toggleColorMode}
                 color="inherit">
-                {theme.palette.mode === 'dark' ? <DarkMode /> : <LightMode />}
+                {theme.palette.mode === 'light' ? <DarkMode /> : <LightMode />}
               </IconButton>
             </Stack>
           </Toolbar>
