@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider, useMediaQuery } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Routes from './Routes';
@@ -11,7 +11,9 @@ import overrides from './theme/overrides';
 import { darkTheme, lightTheme } from './theme/palette';
 
 function App() {
-  const [mode, setMode] = React.useState('dark');
+  // Check system-wide or OS theme preference.
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [mode, setMode] = React.useState(prefersDarkMode ? 'dark' : 'light');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {

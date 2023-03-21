@@ -107,6 +107,11 @@ const Topbar = (props) => {
   );
 };
 
+Topbar.defaultProps = {
+  className: {},
+  onSidebarOpen: () => {}
+};
+
 Topbar.propTypes = {
   className: PropTypes.string,
   onSidebarOpen: PropTypes.func

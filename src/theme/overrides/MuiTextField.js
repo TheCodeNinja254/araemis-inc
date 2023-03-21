@@ -1,4 +1,3 @@
 export default {
-  borderRadius: '24px',
-  backgroundColor: '#FFFFFF'
+  borderRadius: '24px'
 };
