@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   AppBar,
@@ -9,6 +9,7 @@ import {
   styled,
   Toolbar,
   Typography,
+  useScrollTrigger,
   useTheme
 } from '@mui/material';
 import { Facebook, Instagram, Twitter } from '@mui/icons-material';
@@ -23,7 +24,8 @@ const StyledTitle = styled(Typography)(({ theme }) => ({
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   // opacity: 0.5,
-  color: theme.palette.common.white
+  color: theme.palette.common.white,
+  backgroundColor: theme.palette.primary.dark
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -46,8 +48,23 @@ const Topbar = (props) => {
   const { ...rest } = props;
   const theme = useTheme();
 
+  const [backgroundColor, setBackgroundColor] = useState(
+    theme.palette.primary.dark
+  );
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0
+  });
+
+  useEffect(() => {
+    setBackgroundColor(
+      trigger ? theme.palette.primary.dark : theme.palette.primary.main
+    );
+  }, [trigger, theme.palette.primary.dark, theme.palette.primary.main]);
+
   return (
-    <StyledAppBar {...rest} elevation={1}>
+    <StyledAppBar {...rest} elevation={1} style={{ backgroundColor }}>
       <Toolbar>
         <StyledTitle variant="h3">Araemis Inc.</StyledTitle>
         <StyledDiv />
