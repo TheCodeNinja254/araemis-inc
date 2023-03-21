@@ -30,12 +30,12 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 
 const StyledButton = styled(Button)(({ theme }) => ({
   color: theme.palette.primary.main,
-  backgroundColor: theme.palette.white.main,
+  backgroundColor: theme.palette.common.white,
   borderRadius: 20,
   elevation: 0,
   textTransform: 'none',
   '&:hover': {
-    backgroundColor: theme.palette.white.main,
+    backgroundColor: theme.palette.common.white,
     color: theme.palette.primary.main
   }
 }));
@@ -69,8 +69,8 @@ const Topbar = (props) => {
         <StyledAppBar {...rest} elevation={1} style={{ backgroundColor }}>
           <Toolbar>
             <div>
-              <StyledTitle variant="h4">Araemis</StyledTitle>
-              <StyledTitle variant="h5">Consulting</StyledTitle>
+              <StyledTitle variant="h5">Araemis</StyledTitle>
+              <StyledTitle variant="body2">Consulting.</StyledTitle>
             </div>
             <StyledDiv />
             <Hidden lgDown>

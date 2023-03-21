@@ -1,13 +1,16 @@
 import React from 'react';
 import { Box, CardContent, Grid, Typography, useTheme } from '@mui/material';
-import { CommonCard, CommonCardLight } from '../../../Styles/Home';
+import {
+  CommonCardWithBackground,
+  CommonCardLight
+} from '../../../Styles/Home';
 import _upsellReasons from '../../../_mockData/_upsellReasons';
 
 const Upsell = () => {
   const theme = useTheme();
 
   return (
-    <CommonCard>
+    <CommonCardWithBackground>
       <CardContent>
         <Typography
           variant="h4"
@@ -46,7 +49,7 @@ const Upsell = () => {
           ))}
         </Grid>
       </CardContent>
-    </CommonCard>
+    </CommonCardWithBackground>
   );
 };
 
