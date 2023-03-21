@@ -12,32 +12,29 @@ import {
   useScrollTrigger,
   useTheme
 } from '@mui/material';
-import { Facebook, Instagram, Twitter } from '@mui/icons-material';
+import { DarkMode, LightMode, Twitter } from '@mui/icons-material';
+import ThemeContext from '../../context/ThemeContext';
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   marginLeft: theme.spacing(3),
-  color: theme.palette.common.white,
-  fontWeight: 300,
+  color: theme.palette.primary.contrastText,
+  fontWeight: 700,
   [theme.breakpoints.down('md')]: {
     marginLeft: theme.spacing(1)
   }
 }));
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  color: theme.palette.common.white
+  color: theme.palette.primary.contrastText
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.primary.main,
-  backgroundColor: theme.palette.common.white,
+  color: theme.palette.primary.contrastText,
+  backgroundColor: theme.palette.secondary.main,
   borderRadius: 20,
   elevation: 0,
-  textTransform: 'none',
-  '&:hover': {
-    backgroundColor: theme.palette.common.white,
-    color: theme.palette.primary.main
-  }
+  textTransform: 'none'
 }));
 
 const StyledDiv = styled('div')({
@@ -47,9 +44,10 @@ const StyledDiv = styled('div')({
 const Topbar = (props) => {
   const { ...rest } = props;
   const theme = useTheme();
+  const colorMode = React.useContext(ThemeContext);
 
   const [backgroundColor, setBackgroundColor] = useState(
-    theme.palette.primary.dark
+    theme.palette.primary.main
   );
 
   const trigger = useScrollTrigger({
@@ -59,9 +57,15 @@ const Topbar = (props) => {
 
   useEffect(() => {
     setBackgroundColor(
-      trigger ? theme.palette.primary.main : theme.palette.primary.dark
+      trigger
+        ? theme.palette.background.paper
+        : theme.palette.background.default
     );
-  }, [trigger, theme.palette.primary.dark, theme.palette.primary.main]);
+  }, [
+    trigger,
+    theme.palette.background.paper,
+    theme.palette.background.default
+  ]);
 
   return (
     <>
@@ -74,19 +78,26 @@ const Topbar = (props) => {
             </div>
             <StyledDiv />
             <Hidden lgDown>
-              <StyledButton variant="contained" color="primary">
+              <StyledButton variant="contained" color="secondary">
                 Contact Us
               </StyledButton>
             </Hidden>
             <Stack direction="row">
-              <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
+              <IconButton
+                sx={{
+                  marginLeft: theme.spacing(1),
+                  color: theme.palette.primary.contrastText
+                }}>
                 <Twitter />
               </IconButton>
-              <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
-                <Facebook />
-              </IconButton>
-              <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
-                <Instagram />
+              <IconButton
+                sx={{
+                  marginLeft: theme.spacing(1),
+                  color: theme.palette.primary.contrastText
+                }}
+                onClick={colorMode.toggleColorMode}
+                color="inherit">
+                {theme.palette.mode === 'dark' ? <DarkMode /> : <LightMode />}
               </IconButton>
             </Stack>
           </Toolbar>

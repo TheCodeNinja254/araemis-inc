@@ -26,6 +26,7 @@ const About = () => {
         <Typography
           variant="h3"
           textAlign="left"
+          color="text.primary"
           sx={{
             marginTop: theme.spacing(1),
             marginBottom: theme.spacing(3),
@@ -49,6 +50,7 @@ const About = () => {
             <Typography
               variant="body2"
               textAlign="center"
+              color="text.primary"
               sx={{
                 marginBottom: theme.spacing(3),
                 marginTop: theme.spacing(2)

@@ -11,6 +11,7 @@ const FoundersList = () => {
   return (
     <CardContent>
       <Typography
+        color="text.primary"
         sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(4) }}
         variant="h4">
         Meet the Araemis Founder Team
@@ -18,6 +19,7 @@ const FoundersList = () => {
       <Typography
         variant="body2"
         textAlign="left"
+        color="text.primary"
         sx={{
           marginBottom: theme.spacing(3),
           marginTop: theme.spacing(2)
