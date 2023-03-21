@@ -8,7 +8,7 @@ const AppCardContent = styled(CardContent)(({ theme }) => ({
   textAlign: 'center',
   height: '100%',
   backgroundColor: 'rgba(0, 0, 0, 0.8)',
-  color: theme.palette.white
+  color: theme.palette.common.white
   // backdropFilter: 'blur(2px)'
 }));
 

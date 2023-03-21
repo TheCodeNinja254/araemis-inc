@@ -17,15 +17,15 @@ import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 const StyledTitle = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   marginLeft: theme.spacing(3),
-  color: theme.palette.white,
-  fontWeight: 700,
-  textTransform: 'uppercase'
+  color: theme.palette.common.white,
+  fontWeight: 300,
+  [theme.breakpoints.down('md')]: {
+    marginLeft: theme.spacing(1)
+  }
 }));
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  // opacity: 0.5,
-  color: theme.palette.common.white,
-  backgroundColor: theme.palette.primary.dark
+  color: theme.palette.common.white
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -59,33 +59,40 @@ const Topbar = (props) => {
 
   useEffect(() => {
     setBackgroundColor(
-      trigger ? theme.palette.primary.dark : theme.palette.primary.main
+      trigger ? theme.palette.primary.main : theme.palette.primary.dark
     );
   }, [trigger, theme.palette.primary.dark, theme.palette.primary.main]);
 
   return (
-    <StyledAppBar {...rest} elevation={1} style={{ backgroundColor }}>
-      <Toolbar>
-        <StyledTitle variant="h3">Araemis Inc.</StyledTitle>
-        <StyledDiv />
-        <Hidden lgDown>
-          <StyledButton variant="contained" color="primary">
-            Contact Us
-          </StyledButton>
-        </Hidden>
-        <Stack direction="row">
-          <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
-            <Twitter />
-          </IconButton>
-          <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
-            <Facebook />
-          </IconButton>
-          <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
-            <Instagram />
-          </IconButton>
-        </Stack>
-      </Toolbar>
-    </StyledAppBar>
+    <>
+      {trigger && (
+        <StyledAppBar {...rest} elevation={1} style={{ backgroundColor }}>
+          <Toolbar>
+            <div>
+              <StyledTitle variant="h4">Araemis</StyledTitle>
+              <StyledTitle variant="h5">Consulting</StyledTitle>
+            </div>
+            <StyledDiv />
+            <Hidden lgDown>
+              <StyledButton variant="contained" color="primary">
+                Contact Us
+              </StyledButton>
+            </Hidden>
+            <Stack direction="row">
+              <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
+                <Twitter />
+              </IconButton>
+              <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
+                <Facebook />
+              </IconButton>
+              <IconButton sx={{ marginLeft: theme.spacing(1) }} color="inherit">
+                <Instagram />
+              </IconButton>
+            </Stack>
+          </Toolbar>
+        </StyledAppBar>
+      )}
+    </>
   );
 };
 

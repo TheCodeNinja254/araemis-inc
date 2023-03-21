@@ -4,17 +4,18 @@ import { AppCard, AppCardContent } from '../../../Styles/Home';
 
 const TopCard = () => {
   const theme = useTheme();
+
   return (
     <AppCard elevation={0}>
       <AppCardContent>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-            <Typography variant="h2" color={theme.palette.white}>
+            <Typography variant="h3" color={theme.palette.common.white}>
               <strong>Araemis Consulting Inc.</strong>
             </Typography>
             <Typography
-              variant="body1"
-              color={theme.palette.white}
+              variant="body2"
+              color={theme.palette.common.white}
               sx={{ marginTop: theme.spacing(3) }}>
               We solve We solveWe solve We solve
             </Typography>
