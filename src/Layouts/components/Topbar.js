@@ -22,8 +22,8 @@ const StyledTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  opacity: 0.5,
-  color: theme.palette.white
+  // opacity: 0.5,
+  color: theme.palette.common.white
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
