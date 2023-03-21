@@ -1,4 +1,4 @@
-import { colors } from '@mui/joy';
+import { colors } from '@mui/material';
 
 export default {
   root: {

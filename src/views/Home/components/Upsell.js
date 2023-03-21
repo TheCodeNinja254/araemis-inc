@@ -10,7 +10,7 @@ const Upsell = () => {
   const theme = useTheme();
 
   return (
-    <CommonCardWithBackground>
+    <CommonCardWithBackground elevation={0}>
       <CardContent>
         <Typography
           variant="h4"
