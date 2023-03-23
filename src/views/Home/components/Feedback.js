@@ -38,7 +38,7 @@ const Feedback = () => {
           color="text.primary"
           sx={{ marginTop: theme.spacing(1), marginBottom: theme.spacing(1) }}>
           Hear about us from other customers we have had the please to work
-          with. The pleasure is ours
+          with.
         </Typography>
         <Grid spacing={2} container>
           {_feedback.map((r) => (

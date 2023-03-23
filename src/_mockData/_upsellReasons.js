@@ -1,5 +1,5 @@
 import React from 'react';
-import { Light, Money, Support } from '@mui/icons-material';
+import { DataArray, Light, Money, Support } from '@mui/icons-material';
 
 const _upsellReasons = [
   {
@@ -19,6 +19,12 @@ const _upsellReasons = [
     icon: <Support />,
     title: 'Retention & Support',
     text: 'We do our best to walk with you throughout your product development and deployment journey'
+  },
+  {
+    id: 4,
+    icon: <DataArray />,
+    title: 'We Listen',
+    text: 'We strive to deliver solutions that fit like a glove & with cutting-edge software.'
   }
 ];
 

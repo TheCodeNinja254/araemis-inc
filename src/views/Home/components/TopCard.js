@@ -12,8 +12,7 @@ import {
   AppCard,
   AppCardContent,
   CircularCard,
-  CommonCardLight,
-  CommonCardWithOpacity
+  CommonCardLight
 } from '../../../Styles/Home';
 import _speciality from '../../../_mockData/_speciality';
 import ThemeContext from '../../../context/ThemeContext';
@@ -40,6 +39,7 @@ const TopCard = () => {
                       color={theme.palette.common.white}
                       sx={{
                         marginTop: theme.spacing(1),
+                        padding: theme.spacing(2),
                         [theme.breakpoints.up('md')]: {
                           marginTop: theme.spacing(4)
                         }
@@ -50,14 +50,15 @@ const TopCard = () => {
                       variant="body2"
                       color={theme.palette.common.white}
                       sx={{ marginTop: theme.spacing(1) }}>
-                      We solve We solveWe solve We solve
+                      Meeting you at the point of your need! <br /> Innovating
+                      the future with bespoke software solutions.
                     </Typography>
                   </div>
                 </Box>
               </Grid>
               <Grid item xs={4} sm={4} md={8} lg={8} xl={8}>
-                <CommonCardWithOpacity
-                  sx={{
+                <div
+                  style={{
                     marginTop: theme.spacing(-1),
                     [theme.breakpoints.up('md')]: {
                       marginTop: theme.spacing(4)
@@ -69,12 +70,12 @@ const TopCard = () => {
                     justifyContent="center">
                     <div style={{ padding: theme.spacing(1) }}>
                       <CircularCard onClick={() => {}}>
-                        <Mail />
+                        <Mail color={theme.palette.secondary.contrastText} />
                       </CircularCard>
                       <Typography
                         sx={{
                           fontSize: 9,
-                          color: theme.palette.secondary.contrastText
+                          color: theme.palette.common.white
                         }}>
                         Contact Us
                       </Typography>
@@ -82,15 +83,19 @@ const TopCard = () => {
                     <div style={{ padding: theme.spacing(1) }}>
                       <CircularCard onClick={colorMode.toggleColorMode}>
                         {theme.palette.mode === 'light' ? (
-                          <DarkMode />
+                          <DarkMode
+                            color={theme.palette.secondary.contrastText}
+                          />
                         ) : (
-                          <LightMode />
+                          <LightMode
+                            color={theme.palette.secondary.contrastText}
+                          />
                         )}
                       </CircularCard>
                       <Typography
                         sx={{
                           fontSize: 9,
-                          color: theme.palette.secondary.contrastText
+                          color: theme.palette.common.white
                         }}>
                         {theme.palette.mode === 'light'
                           ? 'Lights Out'
@@ -98,7 +103,7 @@ const TopCard = () => {
                       </Typography>
                     </div>
                   </Stack>
-                </CommonCardWithOpacity>
+                </div>
               </Grid>
             </Grid>
           </Grid>
@@ -117,7 +122,7 @@ const TopCard = () => {
             </Typography>
             <Grid container spacing={1} justifyContent="center">
               {_speciality.map((item) => (
-                <Grid item xs={3} key={item.id}>
+                <Grid item xs={4} key={item.id}>
                   <CommonCardLight elevation={0}>
                     <CardContent>
                       <Typography textAlign="center" sx={{ fontSize: 10 }}>

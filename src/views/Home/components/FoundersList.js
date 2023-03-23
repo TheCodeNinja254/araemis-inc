@@ -14,7 +14,12 @@ const FoundersList = () => {
   );
 
   return (
-    <>
+    <div
+      style={{
+        [theme.breakpoints.up('md')]: {
+          padding: theme.spacing(3)
+        }
+      }}>
       <Typography
         color="text.primary"
         sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(4) }}
@@ -59,7 +64,7 @@ const FoundersList = () => {
           </Grid>
         ))}
       </Grid>
-    </>
+    </div>
   );
 };
 

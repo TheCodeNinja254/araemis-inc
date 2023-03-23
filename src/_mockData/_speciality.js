@@ -9,7 +9,7 @@ const _speciality = [
   },
   {
     id: 3,
-    desc: 'Machine Learning & Model training and refinement'
+    desc: 'Machine Learning & Model training'
   }
 ];
 
