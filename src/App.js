@@ -34,7 +34,7 @@ function App() {
     [mode]
   );
   return (
-    <ThemeContext.Provider value={colorMode}>
+    <ThemeContext.Provider value={colorMode} mode={mode}>
       <ThemeProvider theme={theme}>
         <Suspense fallback={<Loader />}>
           <BrowserRouter basename={process.env.REACT_APP_BASENAME || '/'}>

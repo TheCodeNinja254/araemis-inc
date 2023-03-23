@@ -33,12 +33,13 @@ const appBlueOpposite = '#EDEDED';
 const appLightBlueOpposite = '#B5A5FF';
 const appLighterBlueOpposite = '#5E4F8F';
 const appSecondaryDarkOpposite = '#FFD8E6';
-const appSecondaryOpposite = '#FFA3BF';
+const appSecondaryOpposite = '#dfafc0';
 const appSecondaryLightOpposite = '#E57C9D';
 const appSecondaryLighterOpposite = '#7C5265';
 const appContrastTextOpposite = '#1C1B1E';
 
 export const darkTheme = {
+  mode: 'dark',
   black,
   background: {
     dark: appBlueDark,
@@ -96,6 +97,7 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
+  mode: 'light',
   black,
   background: {
     dark: appBlueDarkOpposite,

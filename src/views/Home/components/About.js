@@ -1,39 +1,24 @@
-import React from 'react';
-import {
-  Button,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-  useTheme
-} from '@mui/material';
-import { NavigateNext } from '@mui/icons-material';
+import React, { useState } from 'react';
+import { CardContent, Grid, Typography, useTheme } from '@mui/material';
 import {
   CircularCard,
   CommonCard,
   CommonCardLight
 } from '../../../Styles/Home';
 import _ourProducts from '../../../_mockData/_ourProducts';
-import imageSrc from '../../../assets/Graphics/about.jpg';
+import ProductCard from '../../../components/ProductCard/ProductCard';
+import getInitials from '../../../utils/getInitials';
 
 const About = () => {
   const theme = useTheme();
+  const [selectedProduct, setSelectedProduct] = useState(_ourProducts[0].name);
+  const filteredProducts = _ourProducts.filter((product) =>
+    product.name.includes(selectedProduct)
+  );
 
   return (
     <CommonCard elevation={0} variant="outlined">
       <CardContent>
-        <Typography
-          variant="h3"
-          textAlign="left"
-          color="text.primary"
-          sx={{
-            marginTop: theme.spacing(1),
-            marginBottom: theme.spacing(3),
-            fontWeight: 700
-          }}>
-          ...Araemis Inc.
-        </Typography>
         <Grid spacing={2} container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <CommonCardLight elevation={0}>
@@ -55,48 +40,34 @@ const About = () => {
                 marginBottom: theme.spacing(3),
                 marginTop: theme.spacing(2)
               }}>
-              This impressive paella is a perfect party dish and a fun meal to
-              cook together with your guests.
+              We build and deliver from a wide array of solutions and
+              technologies ranging from CryptoCurrency, Smart Contracts, Web
+              Applications, dApps, Mobile Applications, API solutions, Machine
+              Learning models, Fintech solutions, UI-UX reviews and delivery
+              among others. Below is a showcase of some of our solutions built
+              for Araemis or for clients.
             </Typography>
             <Grid container spacing={2} justifyContent="center">
               {_ourProducts.map((p) => (
                 <Grid item id={p.id} sx={3}>
-                  <CircularCard width="50" height="50">
-                    <Typography>{p.letter}</Typography>
+                  <CircularCard
+                    width="50"
+                    height="50"
+                    active={selectedProduct === p.name}
+                    onClick={() => setSelectedProduct(p.name)}>
+                    <Typography>{getInitials(p.name)}</Typography>
                   </CircularCard>
+                  <Typography
+                    sx={{ fontSize: 9 }}
+                    color={theme.palette.secondary.contrastText}>
+                    {p.shortName}
+                  </Typography>
                 </Grid>
               ))}
             </Grid>
-            <CommonCardLight elevation={0}>
-              <CardMedia
-                sx={{ height: 160 }}
-                image={imageSrc}
-                title="green iguana"
-              />
-              <CardContent>
-                <Typography variant="body1">
-                  <strong>Improvement Steering</strong>
-                </Typography>
-                <Typography sx={{ mt: 1 }} variant="body2" color="secondary">
-                  Company Name
-                </Typography>
-                <Typography sx={{ mt: 1 }} variant="body2">
-                  Lorem ipsum lorem istamet lorem ipsoum Lorem ipsum lorem
-                  istamet lorem ipsoum Lorem ipsum lorem istamet lorem ipsoum
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  disableElevation
-                  sx={{
-                    borderRadius: 10
-                  }}>
-                  Explore Solution <NavigateNext color="secondary" />
-                </Button>
-              </CardActions>
-            </CommonCardLight>
+            {filteredProducts.map((prod) => (
+              <ProductCard key={prod.id} product={prod} />
+            ))}
           </Grid>
         </Grid>
       </CardContent>

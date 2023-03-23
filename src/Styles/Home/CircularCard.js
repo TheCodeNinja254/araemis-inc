@@ -4,10 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import PropTypes from 'prop-types';
 import { CardActionArea } from '@mui/material';
 
-const StyledCardActionArea = styled(CardActionArea)(({ theme }) => ({
+const StyledCardActionArea = styled(CardActionArea)(({ theme, active }) => ({
   width: '45px',
   height: '45px',
   borderRadius: '50%',
+  border: active && `3px solid #00e676`,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -16,16 +17,22 @@ const StyledCardActionArea = styled(CardActionArea)(({ theme }) => ({
 }));
 
 const CircularCard = (props) => {
-  const { children } = props;
+  const { children, onClick, active } = props;
   return (
-    <StyledCardActionArea>
+    <StyledCardActionArea onClick={onClick} active={active}>
       <CardContent>{children}</CardContent>
     </StyledCardActionArea>
   );
 };
 
+CircularCard.defaultProps = {
+  active: false
+};
+
 CircularCard.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+  active: PropTypes.bool
 };
 
 export default CircularCard;

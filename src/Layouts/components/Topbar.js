@@ -70,7 +70,10 @@ const Topbar = (props) => {
   return (
     <>
       {trigger && (
-        <StyledAppBar {...rest} elevation={1} style={{ backgroundColor }}>
+        <StyledAppBar
+          {...rest}
+          elevation={0}
+          style={{ backgroundColor, opacity: 0.9 }}>
           <Toolbar>
             <div>
               <StyledTitle variant="h5">Araemis</StyledTitle>
@@ -78,8 +81,11 @@ const Topbar = (props) => {
             </div>
             <StyledDiv />
             <Hidden lgDown>
-              <StyledButton variant="contained" color="secondary">
-                Contact Us
+              <StyledButton
+                variant="contained"
+                color="secondary"
+                disableElevation>
+                Let&apos;s Talk
               </StyledButton>
             </Hidden>
             <Stack direction="row">
