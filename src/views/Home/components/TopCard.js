@@ -38,10 +38,9 @@ const TopCard = () => {
                       variant="h4"
                       color={theme.palette.common.white}
                       sx={{
-                        marginTop: theme.spacing(1),
                         padding: theme.spacing(2),
                         [theme.breakpoints.up('md')]: {
-                          marginTop: theme.spacing(4)
+                          marginTop: theme.spacing(2)
                         }
                       }}>
                       <strong>Araemis Consulting Inc.</strong>
@@ -59,7 +58,7 @@ const TopCard = () => {
               <Grid item xs={4} sm={4} md={8} lg={8} xl={8}>
                 <div
                   style={{
-                    marginTop: theme.spacing(-1),
+                    marginTop: theme.spacing(1),
                     [theme.breakpoints.up('md')]: {
                       marginTop: theme.spacing(4)
                     }

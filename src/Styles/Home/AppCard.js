@@ -4,7 +4,6 @@ const AppCard = styled(Card)(({ theme }) => ({
   backgroundImage: "url('/images/display1.jpg')",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
-  height: 250,
   marginTop: theme.spacing(0),
   backgroundColor: `linear-gradient(135deg, ${theme.palette.error.main} 0%, ${theme.palette.success.main} 100%)`,
   color: theme.palette.common.white,
