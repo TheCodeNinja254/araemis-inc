@@ -8,7 +8,7 @@ const appBlueDark = '#1C1B1E';
 const appBlue = '#2A282D';
 const appLightBlue = '#4F3789';
 const appLighterBlue = '#CFBCFF';
-const appSecondaryDark = '#301221';
+// const appSecondaryDark = '#301221';
 const appSecondary = '#7C5265';
 const appSecondaryLight = '#FFD8E6';
 const appSecondaryLighter = '#FFFFFF';
@@ -49,13 +49,13 @@ export const darkTheme = {
   primary: {
     contrastText: white,
     dark: appBlueDark,
-    main: appBlue,
+    main: '#826874',
     light: appLightBlue,
     lighter: appLighterBlue
   },
   secondary: {
     contrastText: appContrastText,
-    dark: appSecondaryDark,
+    dark: '#E6E1E6',
     main: appSecondary,
     light: appSecondaryLight,
     lighter: appSecondaryLighter
@@ -106,8 +106,8 @@ export const lightTheme = {
   },
   primary: {
     contrastText: appContrastTextOpposite,
-    dark: appBlueDarkOpposite,
-    main: appBlueOpposite,
+    dark: '#7C5265',
+    main: '#1C1B1E',
     light: appLightBlueOpposite,
     lighter: appLighterBlueOpposite
   },

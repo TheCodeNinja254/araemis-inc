@@ -32,7 +32,7 @@ const ProductCard = ({ key, product }) => {
       <CardActions>
         <Button
           variant="contained"
-          color="primary"
+          color="secondary"
           component={Link}
           href={product.link}
           target="_blank"
@@ -41,7 +41,7 @@ const ProductCard = ({ key, product }) => {
             borderRadius: 10,
             textTransform: 'capitalize'
           }}>
-          Explore Solution <NavigateNext color="secondary" />
+          Explore Solution <NavigateNext color="primary" />
         </Button>
       </CardActions>
     </CommonCardLight>

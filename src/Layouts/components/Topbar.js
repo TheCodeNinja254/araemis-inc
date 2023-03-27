@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   AppBar,
@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { DarkMode, LightMode, Twitter } from '@mui/icons-material';
 import ThemeContext from '../../context/ThemeContext';
+import ContactUsModalContext from '../../context/ContactUsModalContext';
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
@@ -45,6 +46,7 @@ const Topbar = (props) => {
   const { ...rest } = props;
   const theme = useTheme();
   const colorMode = React.useContext(ThemeContext);
+  const { toggleModal } = useContext(ContactUsModalContext);
 
   const [backgroundColor, setBackgroundColor] = useState(
     theme.palette.primary.main
@@ -84,6 +86,7 @@ const Topbar = (props) => {
               <StyledButton
                 variant="contained"
                 color="secondary"
+                onClick={toggleModal}
                 disableElevation>
                 Let&apos;s Talk
               </StyledButton>

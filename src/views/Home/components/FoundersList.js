@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Typography, useTheme } from '@mui/material';
+import { Box, Grid, Typography, useTheme } from '@mui/material';
 import FounderCard from '../../../components/FounderCard';
 import _founderInfo from '../../../_mockData/_founderInfo';
 import { CircularCard } from '../../../Styles/Home';
@@ -14,10 +14,10 @@ const FoundersList = () => {
   );
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         [theme.breakpoints.up('md')]: {
-          padding: theme.spacing(3)
+          padding: theme.spacing(2)
         }
       }}>
       <Typography
@@ -54,6 +54,11 @@ const FoundersList = () => {
               onClick={() => setSelectedFounder(f.name)}>
               <Typography>{getInitials(f.name)}</Typography>
             </CircularCard>
+            <Typography
+              sx={{ fontSize: 9 }}
+              color={theme.palette.secondary.contrastText}>
+              {f.name}
+            </Typography>
           </Grid>
         ))}
       </Grid>
@@ -64,7 +69,7 @@ const FoundersList = () => {
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 };
 

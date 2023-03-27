@@ -8,9 +8,9 @@ const _founderInfo = [
     name: 'John Arunga',
     title: 'Founder',
     descriptionShortened:
-      'Recognized by colleagues and customers for exceptional relationship-building, presentation and communication skills',
+      'John Arunga is an experienced professional in the field of digital transformation with over 15 years of experience having worked across several industries, including banking, healthcare, and Software.',
     completeDescription: [
-      'Recognized by colleagues and customers for exceptional relationship-building, presentation and communication skills'
+      'John Arunga is an experienced professional in the field of digital transformation with over 15 years of experience having worked across several industries, including banking, healthcare, and Software.'
     ],
     linkedInProfile: 'https://www.linkedin.com/in/john-arunga-mba-08244b22/',
     twitterProfile: '',

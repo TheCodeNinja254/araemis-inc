@@ -6,7 +6,7 @@ import {
   Typography,
   useTheme
 } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import { DarkMode, LightMode, Mail } from '@mui/icons-material';
 import {
   AppCard,
@@ -16,10 +16,12 @@ import {
 } from '../../../Styles/Home';
 import _speciality from '../../../_mockData/_speciality';
 import ThemeContext from '../../../context/ThemeContext';
+import ContactUsModalContext from '../../../context/ContactUsModalContext';
 
 const TopCard = () => {
   const theme = useTheme();
   const colorMode = React.useContext(ThemeContext);
+  const { toggleModal } = useContext(ContactUsModalContext);
 
   return (
     <AppCard elevation={0}>
@@ -68,7 +70,7 @@ const TopCard = () => {
                     alignContent="center"
                     justifyContent="center">
                     <div style={{ padding: theme.spacing(1) }}>
-                      <CircularCard onClick={() => {}}>
+                      <CircularCard onClick={toggleModal}>
                         <Mail color={theme.palette.secondary.contrastText} />
                       </CircularCard>
                       <Typography

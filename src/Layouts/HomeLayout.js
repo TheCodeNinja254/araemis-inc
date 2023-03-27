@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/joy';
 import { Fab, useTheme } from '@mui/material';
 import { Phone } from '@mui/icons-material';
 import { Footer, Topbar } from './components';
+import ContactUsDialog from '../components/ContactUsDialog';
+import ContactUsModalContext from '../context/ContactUsModalContext';
 
 const StyledWrapper = styled('div')(({ theme }) => ({
   paddingTop: 0,
@@ -19,6 +21,7 @@ const StyledMain = styled('main')(({ theme }) => ({
 const HomeLayout = (props) => {
   const { children = false } = props;
   const theme = useTheme();
+  const { toggleModal } = useContext(ContactUsModalContext);
 
   return (
     <StyledWrapper>
@@ -29,6 +32,7 @@ const HomeLayout = (props) => {
       </StyledMain>
       <Fab
         variant="extended"
+        onClick={toggleModal}
         size="medium"
         aria-label="add"
         sx={{
@@ -41,6 +45,7 @@ const HomeLayout = (props) => {
         <Phone sx={{ mr: 1 }} />
         Contact Us
       </Fab>
+      <ContactUsDialog />
     </StyledWrapper>
   );
 };

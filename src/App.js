@@ -9,6 +9,7 @@ import shadows from './theme/shadows';
 import typography from './theme/typography';
 import overrides from './theme/overrides';
 import { darkTheme, lightTheme } from './theme/palette';
+import { ContactUsModalProvider } from './context/ContactUsModalContext';
 
 function App() {
   // Check system-wide or OS theme preference.
@@ -22,7 +23,6 @@ function App() {
     }),
     []
   );
-
   const theme = React.useMemo(
     () =>
       createTheme({
@@ -34,14 +34,16 @@ function App() {
     [mode]
   );
   return (
-    <ThemeContext.Provider value={colorMode} mode={mode}>
-      <ThemeProvider theme={theme}>
-        <Suspense fallback={<Loader />}>
-          <BrowserRouter basename={process.env.REACT_APP_BASENAME || '/'}>
-            <Routes />
-          </BrowserRouter>
-        </Suspense>
-      </ThemeProvider>
+    <ThemeContext.Provider value={colorMode}>
+      <ContactUsModalProvider>
+        <ThemeProvider theme={theme}>
+          <Suspense fallback={<Loader />}>
+            <BrowserRouter basename={process.env.REACT_APP_BASENAME || '/'}>
+              <Routes />
+            </BrowserRouter>
+          </Suspense>
+        </ThemeProvider>
+      </ContactUsModalProvider>
     </ThemeContext.Provider>
   );
 }
