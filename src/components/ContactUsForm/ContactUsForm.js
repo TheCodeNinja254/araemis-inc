@@ -23,7 +23,7 @@ const ContactUsForm = ({
           onChange={(e) => setCustomerName(e.target.value)}
           value={customerName}
           label={
-            <Typography color={theme.palette.common.white}>
+            <Typography color={theme.palette.text.primary}>
               Your Name
             </Typography>
           }
@@ -37,7 +37,7 @@ const ContactUsForm = ({
           onChange={(e) => setBusinessName(e.target.value)}
           value={businessName}
           label={
-            <Typography color={theme.palette.common.white}>
+            <Typography color={theme.palette.text.primary}>
               Your Business Name
             </Typography>
           }
@@ -51,7 +51,7 @@ const ContactUsForm = ({
           onChange={(e) => setMailSubject(e.target.value)}
           value={mailSubject}
           label={
-            <Typography color={theme.palette.common.white}>Subject</Typography>
+            <Typography color={theme.palette.text.primary}>Subject</Typography>
           }
           sx={{ marginTop: theme.spacing(2) }}
         />
@@ -65,7 +65,7 @@ const ContactUsForm = ({
           multiline
           rows={4}
           label={
-            <Typography color={theme.palette.common.white}>
+            <Typography color={theme.palette.text.primary}>
               Your message
             </Typography>
           }

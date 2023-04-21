@@ -51,7 +51,7 @@ const _founderInfo = [
     linkedInProfile: 'https://www.linkedin.com/in/fmm254/',
     twitterProfile: 'https://twitter.com/Freddy_Mbugua',
     instagramProfile: '',
-    mediumProfile: 'https://medium.com/@hellofredrick/',
+    mediumProfile: 'https://fredrick-m.medium.com/',
     profilePic: _freddie
   }
 ];
