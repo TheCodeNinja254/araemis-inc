@@ -2,7 +2,7 @@ FROM node:lts AS builder
 
 WORKDIR /araemisapp
 
-REACT_APP_BASENAME=/
+ENV REACT_APP_BASENAME=/
 
 COPY package.json .
 COPY yarn.lock .
