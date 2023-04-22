@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Chip,
@@ -9,40 +9,61 @@ import {
   useTheme
 } from '@mui/material';
 import { DarkMode, WbSunnySharp } from '@mui/icons-material';
+import styled from '@mui/material/styles/styled';
+import { useInView } from 'react-intersection-observer';
 import { IntroBox } from '../../../Styles/Home';
 import timeOfDayWorded from '../../../utils/timeOfDayWorded';
 import aboutImg from '../../../assets/Graphics/about2.jpg';
 import Image from '../../../components/Image';
 import _tags from '../../../_mockData/_tags';
+import trackingInExpandFwd from '../../../animation/trackingInExpandFwd';
 
 const timeOfDay = timeOfDayWorded();
 
+const GreetingTypography = styled(Typography)(({ theme, animate }) => ({
+  marginRight: theme.spacing(1),
+  fontSize: 40,
+  color: colors.yellow[900],
+  [theme.breakpoints.down('small')]: {
+    fontSize: 30
+  },
+  animation:
+    animate &&
+    `${trackingInExpandFwd} 2.3s cubic-bezier(0.215, 0.610, 0.355, 1.000) both`
+}));
+
+const GreetingTrailTypography = styled(Typography)(({ theme, animate }) => ({
+  marginRight: theme.spacing(2),
+  fontSize: 40,
+  color: theme.palette.secondary.lighter,
+  [theme.breakpoints.down('small')]: { fontSize: 30 },
+  animation:
+    animate &&
+    `${trackingInExpandFwd} 2.3s cubic-bezier(0.215, 0.610, 0.355, 1.000) both`
+}));
+
 const IntroSection = () => {
   const theme = useTheme();
+  const [greetingTextRef, inView] = useInView({
+    /* Optional options */
+  });
+
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      // animation
+      setAnimate(true);
+    }, 100);
+  }, [animate]);
+
   return (
     <Box style={{ padding: 12 }}>
       <IntroBox display="flex" justifyContent="center">
         <Stack direction="row" style={{ marginBottom: theme.spacing(1) }}>
-          <Typography
-            style={{
-              marginRight: theme.spacing(1),
-              fontSize: 40,
-              color: colors.yellow[900],
-              [theme.breakpoints.down('small')]: {
-                fontSize: 30
-              }
-            }}>
-            Good
-          </Typography>
-          <Typography
-            style={{
-              marginRight: theme.spacing(2),
-              fontSize: 40,
-              color: theme.palette.secondary.lighter,
-              [theme.breakpoints.down('small')]: { fontSize: 30 }
-            }}>
+          <GreetingTypography animate={animate}>Good</GreetingTypography>
+          <GreetingTrailTypography animate={inView} ref={greetingTextRef}>
             {timeOfDay}
-          </Typography>
+          </GreetingTrailTypography>
           {timeOfDay === 'evening' ? (
             <DarkMode
               style={{

@@ -7,7 +7,7 @@ import {
   Typography,
   useTheme
 } from '@mui/material';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DarkMode, LightMode, Mail } from '@mui/icons-material';
 import {
   AppCard,
@@ -23,6 +23,14 @@ const TopCard = () => {
   const theme = useTheme();
   const colorMode = React.useContext(ThemeContext);
   const { toggleModal } = useContext(ContactUsModalContext);
+
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      // animation
+      setAnimate(true);
+    }, 100);
+  }, [animate]);
 
   return (
     <AppCard elevation={0}>
@@ -123,7 +131,7 @@ const TopCard = () => {
             <Grid container spacing={1} justifyContent="center">
               {_speciality.map((item) => (
                 <Grid item xs={4} key={item.id}>
-                  <CommonCardLight elevation={0}>
+                  <CommonCardLight elevation={0} animate={animate}>
                     <CardContent>
                       <Typography textAlign="center" sx={{ fontSize: 10 }}>
                         {item.desc}

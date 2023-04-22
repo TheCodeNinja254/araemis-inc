@@ -55,7 +55,7 @@ const Feedback = () => {
             }
           }}>
           {_feedback.map((r) => (
-            <CommonCardLightFixedWidth elevation={0}>
+            <CommonCardLightFixedWidth elevation={0} width={350}>
               <CardMedia
                 sx={{ height: 120 }}
                 image={r.imageSrc}
