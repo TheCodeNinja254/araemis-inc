@@ -1,4 +1,5 @@
 import { red, blue, green, orange } from '@mui/material/colors';
+import { colors } from '@mui/material';
 
 const white = '#EEEEEE';
 const black = '#262626';
@@ -10,8 +11,8 @@ const appLightBlue = '#4F3789';
 const appLighterBlue = '#CFBCFF';
 // const appSecondaryDark = '#301221';
 const appSecondary = '#7C5265';
-const appSecondaryLight = '#FFD8E6';
-const appSecondaryLighter = '#FFFFFF';
+const appSecondaryLight = '#E57C9D';
+const appSecondaryLighter = '#E57C9D';
 const appContrastText = '#E6E1E6';
 
 // Light Theme Colors
@@ -32,8 +33,8 @@ const appBlueDarkOpposite = '#F5F5F5';
 const appBlueOpposite = '#EDEDED';
 const appLightBlueOpposite = '#B5A5FF';
 const appLighterBlueOpposite = '#5E4F8F';
-const appSecondaryDarkOpposite = '#FFD8E6';
-const appSecondaryOpposite = '#dfafc0';
+const appSecondaryDarkOpposite = colors.brown[100];
+const appSecondaryOpposite = colors.brown[200];
 const appSecondaryLightOpposite = '#E57C9D';
 const appSecondaryLighterOpposite = '#7C5265';
 const appContrastTextOpposite = '#1C1B1E';
@@ -57,13 +58,14 @@ export const darkTheme = {
     contrastText: appContrastText,
     dark: '#E6E1E6',
     main: appSecondary,
-    light: appSecondaryLight,
+    light: colors.brown[600],
     lighter: appSecondaryLighter
   },
   text: {
     primary: white,
     secondary: appSecondary,
-    link: appLighterBlue
+    link: appLighterBlue,
+    contrastText: colors.yellow[900]
   },
   white: {
     main: white
@@ -92,7 +94,7 @@ export const darkTheme = {
     main: red[600],
     light: red[400]
   },
-  icon: appSecondaryLight,
+  icon: colors.brown[600],
   divider: appSecondary
 };
 
@@ -107,7 +109,7 @@ export const lightTheme = {
   primary: {
     contrastText: appContrastTextOpposite,
     dark: '#7C5265',
-    main: '#1C1B1E',
+    main: colors.brown[600],
     light: appLightBlueOpposite,
     lighter: appLighterBlueOpposite
   },
@@ -121,7 +123,8 @@ export const lightTheme = {
   text: {
     primary: black,
     secondary: appSecondaryOpposite,
-    link: appContrastTextOpposite
+    link: appContrastTextOpposite,
+    contrastText: colors.yellow[900]
   },
   white: {
     main: white

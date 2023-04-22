@@ -2,13 +2,13 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import CardContent from '@mui/material/CardContent';
 import PropTypes from 'prop-types';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, colors } from '@mui/material';
 
 const StyledCardActionArea = styled(CardActionArea)(({ theme, active }) => ({
   width: '45px',
   height: '45px',
   borderRadius: '50%',
-  border: active && `3px solid #00e676`,
+  border: active && `3px solid ${colors.yellow[900]}`,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

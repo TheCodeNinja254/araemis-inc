@@ -14,7 +14,11 @@ const Upsell = () => {
       <CardContent>
         <Typography
           variant="h4"
-          sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(3) }}>
+          sx={{
+            marginTop: theme.spacing(5),
+            marginBottom: theme.spacing(3),
+            color: theme.palette.text.contrastText
+          }}>
           <strong>Why businesses choose us</strong>
         </Typography>
         <Typography

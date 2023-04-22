@@ -5,7 +5,7 @@ const CommonCard = styled(Card)(({ theme }) => ({
   borderColor: theme.palette.background.paper,
   backgroundColor: theme.palette.background.paper,
   marginTop: theme.spacing(2),
-  borderRadius: 20
+  borderRadius: 40
 }));
 
 export default CommonCard;

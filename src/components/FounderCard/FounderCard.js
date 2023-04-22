@@ -50,11 +50,15 @@ const FounderCard = ({ founderInfo }) => {
           </Avatar>
         }
         title={
-          <Typography sx={{ color: theme.palette.white }}>
+          <Typography sx={{ color: theme.palette.white, fontWeight: 900 }}>
             {founderInfo?.name}
           </Typography>
         }
-        subheader={founderInfo?.title}
+        subheader={
+          <Typography color={theme.palette.text.contrastText}>
+            {founderInfo?.title}
+          </Typography>
+        }
       />
       <CardMedia
         component="img"

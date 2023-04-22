@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   AppBar,
   Button,
+  colors,
   Hidden,
   IconButton,
   Stack,
@@ -18,9 +19,10 @@ import ContactUsModalContext from '../../context/ContactUsModalContext';
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
+  fontWeight: 900,
+  fontSize: 25,
   marginLeft: theme.spacing(3),
-  color: theme.palette.primary.contrastText,
-  fontWeight: 700,
+  color: colors.yellow[900],
   [theme.breakpoints.down('md')]: {
     marginLeft: theme.spacing(1)
   }
@@ -79,7 +81,17 @@ const Topbar = (props) => {
           <Toolbar>
             <div>
               <StyledTitle variant="h5">Araemis</StyledTitle>
-              <StyledTitle variant="body2">Consulting.</StyledTitle>
+              <Typography
+                style={{
+                  flexGrow: 1,
+                  marginLeft: theme.spacing(3),
+                  [theme.breakpoints.down('md')]: {
+                    marginLeft: theme.spacing(1)
+                  }
+                }}
+                fontSize={12}>
+                Consulting.
+              </Typography>
             </div>
             <StyledDiv />
             <Hidden lgDown>

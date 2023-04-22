@@ -5,3 +5,5 @@ export { default as CommonCardWithBackground } from './CommonCardWithBackground'
 export { default as CommonCardLight } from './CommonCardLight';
 export { default as CircularCard } from './CircularCard';
 export { default as CommonCardWithOpacity } from './CommonCardWithOpacity';
+export { default as IntroBox } from './IntroBox';
+export { default as CommonCardLightFixedWidth } from './CommonCardLightFixedWidth';

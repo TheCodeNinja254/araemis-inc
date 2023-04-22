@@ -1,6 +1,7 @@
 import {
   Box,
   CardContent,
+  colors,
   Grid,
   Stack,
   Typography,
@@ -38,8 +39,8 @@ const TopCard = () => {
                   <div>
                     <Typography
                       variant="h4"
-                      color={theme.palette.common.white}
                       sx={{
+                        color: colors.yellow[900],
                         padding: theme.spacing(2),
                         [theme.breakpoints.up('md')]: {
                           marginTop: theme.spacing(2)
@@ -50,9 +51,8 @@ const TopCard = () => {
                     <Typography
                       variant="body2"
                       color={theme.palette.common.white}
-                      sx={{ marginTop: theme.spacing(1) }}>
-                      Meeting you at the point of your need! <br /> Innovating
-                      the future with bespoke software solutions.
+                      sx={{ marginTop: theme.spacing(-2) }}>
+                      Meeting you at the point of your need!
                     </Typography>
                   </div>
                 </Box>
@@ -114,12 +114,11 @@ const TopCard = () => {
               sx={{
                 marginTop: theme.spacing(1),
                 fontWeight: 700,
-                textDecoration: 'underline',
                 [theme.breakpoints.up('md')]: {
                   marginTop: theme.spacing(4)
                 }
               }}>
-              Experts in
+              What we do...
             </Typography>
             <Grid container spacing={1} justifyContent="center">
               {_speciality.map((item) => (

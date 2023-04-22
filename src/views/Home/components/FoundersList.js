@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Grid, Typography, useTheme } from '@mui/material';
+import { Box, colors, Grid, Typography, useTheme } from '@mui/material';
 import FounderCard from '../../../components/FounderCard';
 import _founderInfo from '../../../_mockData/_founderInfo';
 import { CircularCard } from '../../../Styles/Home';
@@ -22,7 +22,12 @@ const FoundersList = () => {
       }}>
       <Typography
         color="text.primary"
-        sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(4) }}
+        sx={{
+          marginTop: theme.spacing(5),
+          marginBottom: theme.spacing(4),
+          color: colors.yellow[900],
+          fontWeight: 700
+        }}
         variant="h4">
         Meet the Araemis Founder Team
       </Typography>
